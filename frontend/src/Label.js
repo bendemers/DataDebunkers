@@ -3,7 +3,6 @@ import React from 'react'
 const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 
 export default (props) => {
-  console.log(props.number)
   let currMonth = months[props.number % 12];
   let currYear = Math.floor(props.number/12) + 11;
   return (
