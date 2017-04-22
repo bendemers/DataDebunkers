@@ -75,4 +75,4 @@ const mapDispatch = (dispatch) => ({
   }
 })
 
-export default connect()(DateSlider)
+export default connect(mapState, mapDispatch)(DateSlider)
