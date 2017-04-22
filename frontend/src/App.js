@@ -4,7 +4,8 @@ import './style/style.css';
 
 import Date from './Date.js';
 import Race from './Race.js';
-import Age from './Age.js'
+import Age from './Age.js';
+import Map from './Map.js';
 
 class App extends Component {
   render() {
@@ -15,8 +16,7 @@ class App extends Component {
         {/*<Time />*/}
         <div className='row'>
           <Race />
-          <div id='map-canvas'>
-          </div>
+          <Map />
           <Age />
         </div>
       </div>
