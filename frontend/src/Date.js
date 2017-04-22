@@ -1,32 +1,16 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
 import {Range} from 'rc-slider';
+
+import {setStart, setEnd} from './reducers/date.js'
 
 import Label from './Label.js'
 
-export default class DateSlider extends Component {
+class DateSlider extends Component {
   constructor () {
     super()
 
-    this.state = {
-      start: 0,
-      end: 59,
-    }
-
-    this.setAll = this.setAll.bind(this);
     this.getPositions = this.getPositions.bind(this);
-  }
-
-  setAll () {
-    this.setState({
-      start: 0,
-      end: 59
-    })
-    const handles = document.querySelectorAll('#date .rc-slider-handle');
-    handles[0].style.left = '0%';
-    handles[1].style.left = '100%';
-    const track = document.querySelector('#date .rc-slider-track');
-    track.style.left = '0%'
-    track.style.width = '100%'
   }
 
   getPositions () {
@@ -36,15 +20,11 @@ export default class DateSlider extends Component {
     const place2str = handles[1].style.left.slice(0, -1)
     const place2 = Math.round(59 * Number(place2str) / 100);
     if (place1 < place2) {
-      this.setState({
-        start: place1,
-        end: place2
-      })
+      if (place1 !== this.props.start) this.props.setStart(place1);
+      if (place2 !== this.props.end) this.props.setEnd(place2)
     } else {
-      this.setState({
-        start: place2,
-        end: place1
-      })
+      if (place2 !== this.props.start) this.props.setStart(place2);
+      if (place1 !== this.props.end) this.props.setEnd(place1)
     }
   }
   
@@ -54,11 +34,11 @@ export default class DateSlider extends Component {
         <h2>Date</h2>
         <div className='interact'>
           <div className='place-labels'>
-            <Label number={this.state.start}/>
-            <Label number={this.state.end}/>
+            <Label number={this.props.start}/>
+            <Label number={this.props.end}/>
           </div>
           <Range 
-            defaultValue={[0,59]}
+            defaultValue={[this.props.start, this.props.end]}
             marks={{
               0: 'January \'11',
               12: 'January \'12',
@@ -80,3 +60,19 @@ export default class DateSlider extends Component {
   }
 
 }
+
+const mapState = ({date}) => ({
+  start: date.start,
+  end: date.end
+})
+
+const mapDispatch = (dispatch) => ({
+  setStart: (num) => {
+    dispatch(setStart(num))
+  },
+  setEnd: (num) => {
+    dispatch(setEnd(num))
+  }
+})
+
+export default connect()(DateSlider)
