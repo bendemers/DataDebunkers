@@ -1,0 +1,188 @@
+* {
+  box-sizing: border-box
+}
+
+body {
+  background: #eeeeee;
+  color: #222222;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+h1 {
+  text-align: center;
+}
+
+button {
+  padding: 1em;
+  border: #2694BE solid .1em;
+  border-radius: .5em;
+  background: #6DCBEE;
+  font-weight: bold;
+  font-size: 1em;
+  height: calc(3em + 2px);
+}
+
+.interact {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+#date h2 {
+  margin-bottom: 0;
+}
+
+.row {
+  display: flex;
+}
+
+#map-canvas {
+  width: 66vw;
+  height: 66vh;
+  background: white;
+  border: #bbbbbb solid .1em;
+  border-radius: .5em;
+  margin: auto;
+}
+
+.slider {
+  width: 75%;
+  margin: auto;
+}
+/**********Range***********/
+.rc-slider {
+    position: relative;
+    height: 14px;
+    padding: 5px 0;
+    width: 100%;
+    border-radius: 6px;
+    box-sizing: border-box;
+    margin: 2em 0;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.rc-slider-rail {
+    position: absolute;
+    width: 100%;
+    background-color: #757575;
+    height: 4px;
+    border-radius: 6px;
+}
+
+.rc-slider-track {
+    position: absolute;
+    left: 0;
+    height: 4px;
+    border-radius: 6px;
+    background-color: #2694BE;
+}
+
+.rc-slider-step {
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background: transparent;
+}
+
+.rc-slider-handle {
+    position: absolute;
+    margin-left: -7px;
+    margin-top: -5px;
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+    border-radius: 50%;
+    border: solid 2px #2694BE;
+    background-color: #fff;
+}
+
+.rc-slider-mark {
+    position: absolute;
+    top: 18px;
+    left: 0;
+    width: 100%;
+    font-size: 12px;
+}
+
+.rc-slider-mark-text {
+    position: absolute;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    cursor: pointer;
+    color: #999;
+    font-size: 1em;
+}
+
+.rc-slider-mark-text-active {
+    color: #666;
+}
+
+.rc-slider-dot {
+    position: absolute;
+    bottom: -2px;
+    margin-left: -4px;
+    width: 8px;
+    height: 8px;
+    border: 2px solid #757575;
+    background-color: #fff;
+    cursor: pointer;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+.rc-slider-dot-active {
+    border-color: #2694BE;
+}
+
+.place-labels {
+  width: 100%;
+  position: absolute;
+}
+
+.label {
+  color: #eeeeee;
+  font-size: .75em;
+  width: 10%;
+  position: absolute;
+  text-align: center;
+  margin-left: -5%;
+}
+
+.label span {
+  background: #222222;
+  padding: .5em;
+  border-radius: .5em;
+  display: block;
+  width: 100%;
+}
+
+.label svg {
+  width: 1em;
+  height: .5em;
+  margin: auto;
+  display: block;
+}
+
+.race,
+.age {
+  padding: .5em;
+  width: 16.66666vw;
+}
+
+.choices {
+  display: flex;
+  flex-direction: column;
+}
+
+.choices label {
+  display: block;
+  padding: .25em 0;
+}
+
+.choices label.large {
+  font-weight: bold;
+  padding-bottom: .5em;
+}
