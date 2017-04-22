@@ -34,6 +34,10 @@ button {
   margin-bottom: 0;
 }
 
+.row {
+  display: flex;
+}
+
 .placeholder {
   width: 66vw;
   height: 66vh;
@@ -160,4 +164,25 @@ button {
   height: .5em;
   margin: auto;
   display: block;
+}
+
+.race,
+.age {
+  padding: .5em;
+  width: 16.66666vw;
+}
+
+.choices {
+  display: flex;
+  flex-direction: column;
+}
+
+.choices label {
+  display: block;
+  padding: .25em 0;
+}
+
+.choices label.large {
+  font-weight: bold;
+  padding-bottom: .5em;
 }

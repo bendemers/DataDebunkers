@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 
 import './style/style.css';
 
-import Time from './Time.js';
 import Date from './Date.js';
+import Race from './Race.js';
+import Age from './Age.js'
 
 class App extends Component {
   render() {
@@ -12,8 +13,12 @@ class App extends Component {
         <h1>#Hack4Democracy</h1>
         <Date />
         {/*<Time />*/}
-        <div className='placeholder'>
-          for place holding purposes
+        <div className='row'>
+          <Race />
+          <div className='placeholder'>
+            for place holding purposes
+          </div>
+          <Age />
         </div>
       </div>
     );
