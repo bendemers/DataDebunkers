@@ -1,9 +1,12 @@
-import React, {Component} from 'react'
+import React, {Component} from 'react';
 import GoogleMapReact from 'google-map-react';
+import {connect} from 'react-redux';
 
-import Layer from './Layer.js'
+import BaseLayer from './BaseLayer.js';
+import PoliceLayer from './PoliceLayer.js';
+import SchoolLayer from './SchoolLayer.js';
 
-export default class Map extends Component {
+class Map extends Component {
   constructor () {
     super()
     this.state ={
@@ -89,11 +92,19 @@ export default class Map extends Component {
           yesIWantToUseGoogleMapApiInternals
       >
       </GoogleMapReact>
-      <Layer
+      <BaseLayer
                               map={this.state.map}
                               maps={this.state.maps} 
                               />
+      {this.props.layers.police ? <PoliceLayer map={this.state.map} maps={this.state.maps} /> : null}
+      <SchoolLayer map={this.state.map} maps={this.state.maps} />
     </div>
   )
   }
 }
+
+const mapState = ({layers}) => ({
+  layers
+})
+
+export default connect(mapState)(Map)
