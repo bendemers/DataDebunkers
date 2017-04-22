@@ -38,7 +38,7 @@ button {
   display: flex;
 }
 
-.placeholder {
+#map-canvas {
   width: 66vw;
   height: 66vh;
   background: white;

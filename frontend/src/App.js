@@ -15,8 +15,7 @@ class App extends Component {
         {/*<Time />*/}
         <div className='row'>
           <Race />
-          <div className='placeholder'>
-            for place holding purposes
+          <div id='map-canvas'>
           </div>
           <Age />
         </div>
