@@ -24,10 +24,11 @@ button {
 .interact {
   display: flex;
   justify-content: space-between;
+  position: relative;
 }
 
-.interact button {
-  margin-top: -1em;
+#date h2 {
+  margin-bottom: 0;
 }
 
 .placeholder {
@@ -51,7 +52,7 @@ button {
     width: 100%;
     border-radius: 6px;
     box-sizing: border-box;
-    margin: 0 0 2em;
+    margin: 2em 0;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
@@ -127,4 +128,33 @@ button {
 
 .rc-slider-dot-active {
     border-color: #2694BE;
+}
+
+.place-labels {
+  width: 100%;
+  position: absolute;
+}
+
+.label {
+  color: #eeeeee;
+  font-size: .75em;
+  width: 10%;
+  position: absolute;
+  text-align: center;
+  margin-left: -5%;
+}
+
+.label span {
+  background: #222222;
+  padding: .5em;
+  border-radius: .5em;
+  display: block;
+  width: 100%;
+}
+
+.label svg {
+  width: 1em;
+  height: .5em;
+  margin: auto;
+  display: block;
 }
