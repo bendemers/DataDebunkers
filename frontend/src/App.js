@@ -6,6 +6,7 @@ import Date from './Date.js';
 import Race from './Race.js';
 import Age from './Age.js';
 import Map from './Map.js';
+import ChooseLayers from './ChooseLayers.js'
 
 class App extends Component {
   render() {
@@ -17,8 +18,9 @@ class App extends Component {
         <div className='row'>
           <Race />
           <Map />
-          <Age />
+          {/*<Age />*/}
         </div>
+        {/*<ChooseLayers />*/}
       </div>
     );
   }
